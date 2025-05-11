@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+  }
+  
+  h1, h2 {
+    color: #1976d2;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+  }
+  
+  button:hover {
+    background-color: #125ea4;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 0.75rem;
+    background: #f1f1f1;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  li button {
+    margin-left: 0.5rem;
+    background-color: #e53935;
+  }
+  
+  li button:first-of-type {
+    background-color: #43a047;
+  }
+  
+  li button:hover {
+    opacity: 0.9;
+  }
+  /* Highlight dates with expenses */
+.react-calendar__tile.highlight {
+  background: #00cec9 !important;
+  color: white;
+  border-radius: 6px;
+}
+
+.react-calendar__tile.highlight {
+  background: #55efc4 !important;
+  color: #2d3436 !important;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.react-calendar__tile {
+  color: #2d3436 !important;
+  font-weight: 500;
+}
+.react-calendar__tile--active {
+  background-color: #00cec9 !important;
+  color: white !important;
+  border-radius: 8px;
+}
+.react-calendar__navigation button {
+  background: #e5e5e5 !important;
+  margin: 5px;
+  color: #000;
+  font-weight: 600;
+}
