@@ -70,9 +70,9 @@ form {
   margin-bottom: 1rem;
 }
 
-input {
+input ,select{
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #c72c2c;
   border-radius: 6px;
   font-size: 1rem;
 }

@@ -24,14 +24,16 @@ const CreateGroup = () => {
   };
 
   return (
-    <div>
+    <div >
       <h3>Create Group</h3>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
       <input
         placeholder="Enter group name"
         value={groupName}
         onChange={(e) => setGroupName(e.target.value)}
       />
       <button onClick={handleCreate}>Create</button>
+      </div>
     </div>
   );
 };

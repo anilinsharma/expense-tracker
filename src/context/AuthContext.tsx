@@ -5,16 +5,15 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import {
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  signInWithPopup,
-  signOut,
-} from 'firebase/auth';
-import { auth } from '../firebase';
+import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, signOut, User } from 'firebase/auth';
+import { app } from '../firebase';
+
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 type AuthContextType = {
-  user: any;
+  user: User | null;
+  loading: boolean;
   loginWithGoogle: () => Promise<void>;
   logout: () => Promise<void>;
 };
@@ -22,17 +21,19 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       setUser(firebaseUser);
+      setLoading(false);
     });
+
     return () => unsubscribe();
   }, []);
 
   const loginWithGoogle = async () => {
-    const provider = new GoogleAuthProvider();
     await signInWithPopup(auth, provider);
   };
 
@@ -41,16 +42,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loginWithGoogle, logout }}>
-      {children}
+    <AuthContext.Provider value={{ user, loading, loginWithGoogle, logout }}>
+      {!loading && children}
     </AuthContext.Provider>
   );
 };
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
+  if (!context) throw new Error('useAuth must be used within AuthProvider');
   return context;
 };

@@ -6,12 +6,12 @@ import StyledCard from '../components/StyledCard';
 const GroupManagementPage = () => {
   return (
     <MainLayout>
-      <div style={{ flex: 1 }}>
+      <div style={{ flex: 1, padding: '1rem' }}>
         <StyledCard>
           <BalanceSummary />
         </StyledCard>
       </div>
-      <div style={{ flex: 2 }}>
+      <div style={{ flex: 2, padding: '1rem' }}>
         <StyledCard>
           <GroupManager />
         </StyledCard>

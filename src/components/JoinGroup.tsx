@@ -33,13 +33,16 @@ const JoinGroup = () => {
   return (
     <div>
       <h3>Join Group</h3>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
       <input
         placeholder="Enter group name"
         value={groupName}
         onChange={(e) => setGroupName(e.target.value)}
       />
       <button onClick={handleJoin}>Join</button>
+      </div>
     </div>
+
   );
 };
 

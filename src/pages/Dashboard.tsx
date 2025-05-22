@@ -9,7 +9,7 @@ const DashboardPage = () => {
       <div style={{
         display: 'flex',
         flexDirection: 'column',
-        width: '100%',
+         
         gap: '1rem',
         padding: '1rem'
       }}>

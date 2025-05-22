@@ -11,7 +11,7 @@ const StyledCard = ({ children, style }: Props) => (
     borderRadius: '10px',
     padding: '1rem',
     boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-    width: '100%',
+    
     ...style
   }}>
     {children}
