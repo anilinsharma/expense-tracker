@@ -7,7 +7,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyBwNzDCcMqNyIo-JYziKy3oTaiRk7gzdu8",
     authDomain: "expensetracker-a9029.firebaseapp.com",
     projectId: "expensetracker-a9029",
-    storageBucket: "expensetracker-a9029.firebasestorage.app",
+    storageBucket: "expensetracker-a9029.appspot.com",
     messagingSenderId: "795748726287",
     appId: "1:795748726287:web:951da454fc6064c430157a",
     measurementId: "G-8B86W52N5P"
