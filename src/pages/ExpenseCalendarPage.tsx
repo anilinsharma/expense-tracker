@@ -1,7 +1,7 @@
 import MainLayout from '../layout/MainLayout';
 import BalanceSummary from '../components/BalanceSummary';
 import StyledCard from '../components/StyledCard';
-import ExpenseCalendar from '../components/ExpenseCalendar'; // ✅ this is new
+import ExpenseCalendar from '../components/ExpenseCalendar';
 
 const ExpenseCalendarPage = () => {
   return (
@@ -14,7 +14,7 @@ const ExpenseCalendarPage = () => {
 
       <div style={{ flex: 2, padding: '1rem' }}>
         <StyledCard>
-          <ExpenseCalendar /> {/* ✅ replace all calendar logic with this */}
+          <ExpenseCalendar />
         </StyledCard>
       </div>
     </MainLayout>
